@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pequeño examen sobre los tipos de ecuaciones quimicas</title>
+    <title>Examen del tema "Los grandes reinos de la naturaleza"</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -114,7 +114,7 @@
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
     <div id="quizApp" class="quiz-container">
-        <h1 class="text-3xl font-bold text-gray-900 text-center">Pequeño examen sobre los tipos de ecuaciones quimicas</h1>
+        <h1 class="text-3xl font-bold text-gray-900 text-center">Examen del tema "Los grandes reinos de la naturaleza"</h1>
         <div id="questionContainer" class="hidden">
             <p id="questionText" class="text-xl font-semibold text-gray-800 mb-4"></p>
             <div id="optionsContainer" class="flex flex-col">
@@ -128,7 +128,7 @@
         </div>
 
         <div id="startScreen" class="text-center">
-            <p class="text-lg text-gray-700 mb-6">Ponte a prueba con 10 preguntas sobre los diferentes tipos de reacciones químicas. Recuerda que esto es evaluado, te deseamos la mejor de las suertes.</p>
+            <p class="text-lg text-gray-700 mb-6">En este examen sobre los diferentes reinos de vida, puedes usar solamente tus apuntes y debes marcar la opcion que consideres correcta. Recuerda que esto es evaluado,y, por lo tanto no existen 2 oportunidades, te deseamos la mejor de las suertes.</p>
             <button id="startQuizBtn" class="button button-primary">Comenzar Examen</button>
         </div>
 
@@ -142,67 +142,159 @@
     <script>
         // Quiz questions array
         const questions = [
-            {
-                question: "¿Cuantos tipos de ecuaciones quimicas hemos mencionado?",
-                options: ["7", "6", "4", "10"],
-                correctAnswer: "7",
-                rationale: "Exacto, mencionamos 7 tipos diferentes de ecuaciones quimicas, aunque solo 5 de ellas son verdaderamente importantes."
-            },
-            {
-                question: "¿Cual de los siguentes tipos de ecuacion quimica se entiende que no produce energia exotermica o endotermica?",
-                options: ["Por sustitucion", "Por neutralizacion", "Todas producen energia", "Por descompisicion"],
-                correctAnswer: "Todas producen energia",
-                rationale: "Todas las reacciones (ecuaciones) quimicas puras producen o absorben energia."
-            },
-            {
-                question: "¿Cuales son dos factores principales que pueden impulsar una reaccion de doble desplazamiento a completarse?",
-                options: ["Formacion de un gas y la liberacion de calor", "Formacion de un gas y la formacion de agua", "Liberacion de calor y absorcion de luz", "Formacion de un acido y una base fuerte"],
-                correctAnswer: "Formacion de un gas y la formacion de agua",
-                rationale: "Dos factores principales aparte de la formacion de un precipitado son la formacion de agua y gas."
-            },
-            {
-                question: "¿En una reaccion redox. Cual de las siguientes afirmaciones describe correctamente la funcion del agente oxidante?",
-                options: ["Es la sustancia que causa la oxidacion de otra y, por ende, se oxida a si misma", "Es la sustancia que causa la oxidacion de otra y, por ende, se reduce a si misma", "Es la sustancia que pierde electrones y se reduce", "Es la sustancia que gana electrones y se oxida"],
-                correctAnswer: "Es la sustancia que causa la oxidacion de otra y, por ende, se reduce a si misma",
-                rationale: "Un agente oxidante es el causante de la oxidacion de otra sustancia. Para hacer posible el agente debe aceptar electrones, lo que significa que el mismo se reduce."
-            },
-            {
-                question: "¿Cual es la diferencia entre una reaccion exotermica y una endotermica?",
-                options: ["La exotermica produce energia, la endotermica absorbe energia", "La exotermica absorbe energia, la endotermica produce energia", "No hay ninguna diferencia", "Las dos cumplen la misma funcion, por lo que, no hay diferencia"],
-                correctAnswer: "La exotermica produce energia, la endotermica absorbe energia",
-                rationale: "Se le llama reaccion exotermica a toda aquella interaccion quimica o natural que produzca energia(generalmente en forma de calor), mientras que la endotermica es toda aquella que absorba energia de su entorno."
-            },
-            {
-                question: "¿Cual es el tipo de ecuacion quimica mas comun?",
-                options: ["Por Redox", "Por desplazamiento doble ", "Por descompisicion", "Por sintesis"],
-                correctAnswer: "Por sintesis",
-                rationale: "La reacción de síntesis es una de las más comunes, donde dos o más reactivos se combinan para formar un solo producto."
-            },
-            {
-                question: "Las reacciones de descomposición son a menudo endotérmicas. ¿Cuál es la razón principal?",
-                options: ["Los productos son menos estables", "Se forman nuevos enlaces", "Se necesita romper enlaces en los reactivos", "Hay un aumento en el volumen"],
-                correctAnswer: "Se necesita romper enlaces en los reactivos",
-                rationale: "Las reacciones de descomposición requieren energía para romper los enlaces de los reactivos, lo que las hace endotérmicas."
-            },
-            {
-                question: "¿Que es lo que siempre estara presente en una ecuacion quimica?",
-                options: ["Flechas", "Todos", "Productos", "Reactivos"],
-                correctAnswer: "Todos",
-                rationale: "Sin importar el tipo de ecuacion quimica que hagas, siempre son necesarios tanto Reactivos, productos y flechas para que la ecuacion este bien, por lo que, observa bien antes de hacer alguna, puede haber un error en su estructura."
-            },
-            {
-                question: "¿Cual es la diferencia estructural principal entre una ecuacion de desplazamiento simple y una de desplazamiento doble?",
-                options: ["En el simple se forma un precipitado, en el doble, no", "El desplazamiento simple involucra un elemento y un compuesto, el doble, dos compuestos", "El desplazamiento simple siempre es redox, el doble nunca lo es", "Solo el doble desplazamiento produce agua como producto"],
-                correctAnswer: "El desplazamiento simple involucra un elemento y un compuesto, el doble, dos compuestos",
-                rationale: "La diferencia fundamental radica en los tipos de reactivos: el desplazamiento simple ocurre entre un elemento y un compuesto, mientras que el doble desplazamiento ocurre entre dos compuestos, donde los iones se intercambian."
-            },
-            {
-                question: "¿Que es un compuesto?",
-                options: ["Es una parte de la ecuacion quimica", "Es la sustancia formada por la combinacion de dos o mas elementos", "No es nada relevante", "Es la union de dos Reactivos"],
-                correctAnswer: "Es la sustancia formada por la combinacion de dos o mas elementos",
-                rationale: "Un compuesto siempre sera la union de dos o mas elemento."
-            }
-        ];
+  {
+    question: "¿Cuál de los siguientes reinos incluye organismos que presentan seudópodos, cilios o flagelos como formas de locomoción?",
+    options: ["Fungi", "Protista", "Plantae", "Animalia"],
+    correctAnswer: "Protista",
+    rationale: "Los protistas tienen diversos medios de locomoción como seudópodos (amebas), cilios (paramecio) y flagelos (euglena)."
+  },
+  {
+    question: "¿Cuál es una diferencia fundamental entre los reinos Archaebacteria y Eubacteria?",
+    options: ["Tipo de reproducción", "Presencia de núcleo", "Composición de la pared celular", "Tamaño celular"],
+    correctAnswer: "Composición de la pared celular",
+    rationale: "Las arqueobacterias no tienen peptidoglucano en su pared celular, mientras que las eubacterias sí."
+  },
+  {
+    question: "¿Qué estructura usan los hongos para absorber nutrientes del ambiente?",
+    options: ["Raíces", "Tubos digestivos", "Hifas", "Pelos radicales"],
+    correctAnswer: "Hifas",
+    rationale: "Las hifas son estructuras filamentosas por donde los hongos absorben nutrientes del ambiente."
+  },
+  {
+    question: "¿Cuál de estos grupos incluye organismos que pueden ser unicelulares o multicelulares y realizar fotosíntesis?",
+    options: ["Fungi", "Archaebacteria", "Protista", "Animalia"],
+    correctAnswer: "Protista",
+    rationale: "El reino protista incluye algas unicelulares y pluricelulares que realizan fotosíntesis, como las algas verdes."
+  },
+  {
+    question: "¿Cuál es una característica exclusiva del reino Fungi?",
+    options: ["Tienen clorofila", "Presentan quitina en la pared celular", "Tienen flagelos", "Realizan fotosíntesis"],
+    correctAnswer: "Presentan quitina en la pared celular",
+    rationale: "Los hongos tienen una pared celular compuesta por quitina, a diferencia de las plantas que tienen celulosa."
+  },
+  {
+    question: "¿Qué grupo de organismos realiza la descomposición junto con las bacterias?",
+    options: ["Animales", "Protistas", "Hongos", "Plantas"],
+    correctAnswer: "Hongos",
+    rationale: "Los hongos, al igual que las bacterias, descomponen materia orgánica muerta y reciclan nutrientes."
+  },
+  {
+    question: "¿Qué tipo de plantas no poseen tejidos conductores como xilema y floema?",
+    options: ["Gimnospermas", "Angiospermas", "Briofitas", "Traqueófitas"],
+    correctAnswer: "Briofitas",
+    rationale: "Las briofitas como musgos y hepáticas son plantas simples que carecen de tejidos vasculares."
+  },
+  {
+    question: "¿Qué estructura transporta agua desde la raíz hasta las hojas en las plantas vasculares?",
+    options: ["Floema", "Cloroplasto", "Estoma", "Xilema"],
+    correctAnswer: "Xilema",
+    rationale: "El xilema es el tejido vascular encargado de transportar agua y minerales desde la raíz hasta el resto de la planta."
+  },
+  {
+    question: "¿Qué tipo de simetría presentan los peces y los mamíferos?",
+    options: ["Radial", "Espiral", "Bilateral", "Asimétrica"],
+    correctAnswer: "Bilateral",
+    rationale: "La mayoría de los animales, incluidos peces y mamíferos, presentan simetría bilateral, lo que significa que tienen lados derecho e izquierdo equivalentes."
+  },
+  {
+    question: "¿Qué función cumplen las micorrizas en las plantas?",
+    options: ["Reproducción asexual", "Fotosíntesis", "Defensa contra bacterias", "Absorción mejorada de nutrientes"],
+    correctAnswer: "Absorción mejorada de nutrientes",
+    rationale: "Las micorrizas son asociaciones simbióticas entre hongos y raíces de plantas que mejoran la absorción de agua y minerales."
+  },
+  {
+    question: "¿Qué organismo del reino protista se caracteriza por tener cilios como medio de locomoción?",
+    options: ["Ameba", "Paramecio", "Euglena", "Plasmodio"],
+    correctAnswer: "Paramecio",
+    rationale: "El paramecio se mueve mediante cilios, pequeñas proyecciones similares a pelos que baten para desplazarlo en el agua."
+  },
+  {
+    question: "¿Qué caracteriza a las gimnospermas?",
+    options: ["Poseen semillas dentro de un fruto", "Tienen flores vistosas", "Tienen semillas desnudas", "Carecen de raíces"],
+    correctAnswer: "Tienen semillas desnudas",
+    rationale: "Las gimnospermas, como los pinos, producen semillas no encerradas en frutos, a diferencia de las angiospermas."
+  },
+  {
+    question: "¿Cuál de los siguientes organismos es un protista que realiza fotosíntesis y se mueve con un flagelo?",
+    options: ["Ameba", "Paramecio", "Euglena", "Giardia"],
+    correctAnswer: "Euglena",
+    rationale: "La euglena es un protista autótrofo con flagelo, capaz de hacer fotosíntesis pero también de absorber nutrientes heterotróficamente."
+  },
+  {
+    question: "¿Qué tipo de reproducción es común en los protistas y hongos?",
+    options: ["Fisión binaria", "Reproducción por esporas", "Fertilización cruzada", "Gemación sexual"],
+    correctAnswer: "Reproducción por esporas",
+    rationale: "Muchos protistas y hongos se reproducen a través de esporas, lo que les permite sobrevivir en condiciones desfavorables."
+  },
+  {
+    question: "¿Cuál de las siguientes plantas es una monocotiledónea?",
+    options: ["Frijol", "Tomate", "Maíz", "Limón"],
+    correctAnswer: "Maíz",
+    rationale: "El maíz es una planta monocotiledónea, con una sola hoja embrionaria y nervaduras paralelas."
+  },
+  {
+    question: "¿Qué organismo del reino animalia carece de tejidos verdaderos y posee poros por donde circula el agua?",
+    options: ["Anélidos", "Cnidarios", "Poríferos", "Moluscos"],
+    correctAnswer: "Poríferos",
+    rationale: "Los poríferos, como las esponjas, no tienen tejidos verdaderos y obtienen alimento mediante la filtración de agua que pasa por sus poros."
+  },
+  {
+    question: "¿Qué tipo de simetría tiene una estrella de mar?",
+    options: ["Bilateral", "Asimétrica", "Radial", "Ninguna"],
+    correctAnswer: "Radial",
+    rationale: "Los equinodermos como las estrellas de mar tienen simetría radial, especialmente en su etapa adulta."
+  },
+  {
+    question: "¿Cuál es el reino que agrupa organismos eucarióticos, multicelulares y heterótrofos que ingieren alimento?",
+    options: ["Plantae", "Fungi", "Animalia", "Protista"],
+    correctAnswer: "Animalia",
+    rationale: "Los animales son heterótrofos por ingestión, eucariotas y pluricelulares con tejidos y órganos diferenciados."
+  },
+  {
+    question: "¿Qué organismo es considerado un hongo unicelular utilizado en la industria alimentaria?",
+    options: ["Champiñón", "Tiña", "Levadura", "Amanita"],
+    correctAnswer: "Levadura",
+    rationale: "La levadura es un hongo unicelular usado en la fermentación para elaborar pan, cerveza y otros productos."
+  },
+  {
+    question: "¿Qué reino incluye organismos capaces de producir alcohol por fermentación?",
+    options: ["Animalia", "Plantae", "Fungi", "Protista"],
+    correctAnswer: "Fungi",
+    rationale: "Las levaduras del reino fungi pueden fermentar azúcares y producir alcohol etílico en condiciones anaeróbicas."
+  },
+  {
+    question: "¿Qué animal pertenece al filo de los anélidos?",
+    options: ["Lombriz de tierra", "Araña", "Mariposa", "Tenia"],
+    correctAnswer: "Lombriz de tierra",
+    rationale: "Las lombrices de tierra son anélidos, caracterizados por tener cuerpos segmentados y simetría bilateral."
+  },
+  {
+    question: "¿Qué filo agrupa animales con exoesqueleto y cuerpo segmentado como insectos y arácnidos?",
+    options: ["Moluscos", "Anélidos", "Artrópodos", "Equinodermos"],
+    correctAnswer: "Artrópodos",
+    rationale: "Los artrópodos tienen exoesqueleto de quitina y cuerpo segmentado, incluyendo insectos, arácnidos y crustáceos."
+  },
+  {
+    question: "¿Qué característica comparten todas las plantas del reino Plantae?",
+    options: ["Son heterótrofas", "Carecen de clorofila", "Realizan fotosíntesis", "No tienen pared celular"],
+    correctAnswer: "Realizan fotosíntesis",
+    rationale: "Todas las plantas contienen clorofila en sus cloroplastos, lo que les permite realizar fotosíntesis para producir su propio alimento."
+  },
+  {
+    question: "¿Qué reino contiene organismos capaces de vivir en ambientes extremos como géiseres y salares?",
+    options: ["Fungi", "Archaebacteria", "Protista", "Animalia"],
+    correctAnswer: "Archaebacteria",
+    rationale: "Las arqueobacterias son extremófilas que habitan ambientes inhóspitos como fuentes termales, salinas y ambientes ácidos."
+  },
+  {
+    question: "¿Cuál es una función de los cilios en algunos protistas?",
+    options: ["Fotosíntesis", "Reproducción sexual", "Digestión de alimentos", "Locomoción y captura de alimentos"],
+    correctAnswer: "Locomoción y captura de alimentos",
+    rationale: "Los cilios permiten a ciertos protistas desplazarse y también ayudan a canalizar partículas de alimento hacia su boca celular."
+  }
+];
+
+
 
         let currentQuestionIndex = 0;
         let score = 0;
@@ -329,14 +421,15 @@
         function showSummary() {
             quizContainer.classList.add('hidden');
             summaryScreen.classList.remove('hidden');
-            summaryTitle.textContent = "Cuestionario Completado";
+            summaryTitle.textContent = "Examen finalizado";
             summaryScore.textContent = `Has obtenido ${score} de ${questions.length} respuestas correctas.`;
         }
 
         function restartQuiz() {
-            summaryScreen.classList.add('hidden');
-            startQuiz(); // This will reset and start from the first question
-        }
+    // Redirige al usuario a otra página (puedes cambiar la URL según lo necesites)
+    window.location.href = "https://www.google.com"; 
+}
+
 
         // Initial load: show start screen
         document.addEventListener('DOMContentLoaded', () => {
